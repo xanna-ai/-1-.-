@@ -1,0 +1,100 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "days_required": 3,
+      "workers_needed": 5,
+      "previous_jobs": []
+    },
+    {
+      "id": 2,
+      "days_required": 2,
+      "workers_needed": 3,
+      "previous_jobs": [1]
+    },
+    {
+      "id": 3,
+      "days_required": 2,
+      "workers_needed": 4,
+      "previous_jobs": [1]
+    },
+    {
+      "id": 4,
+      "days_required": 2,
+      "workers_needed": 2,
+      "previous_jobs": [1]
+    },
+    {
+      "id": 5,
+      "days_required": 1,
+      "workers_needed": 2,
+      "previous_jobs": []
+    },
+    {
+      "id": 6,
+      "days_required": 3,
+      "workers_needed": 3,
+      "previous_jobs": [2]
+    },
+    {
+      "id": 7,
+      "days_required": 1,
+      "workers_needed": 1,
+      "previous_jobs": [3]
+    },
+    {
+      "id": 8,
+      "days_required": 2,
+      "workers_needed": 4,
+      "previous_jobs": [4]
+    },
+    {
+      "id": 9,
+      "days_required": 2,
+      "workers_needed": 2,
+      "previous_jobs": [4]
+    },
+    {
+      "id": 10,
+      "days_required": 1,
+      "workers_needed": 1,
+      "previous_jobs": [5]
+    },
+    {
+      "id": 11,
+      "days_required": 2,
+      "workers_needed": 3,
+      "previous_jobs": [6]
+    },
+    {
+      "id": 12,
+      "days_required": 2,
+      "workers_needed": 2,
+      "previous_jobs": [6]
+    },
+    {
+      "id": 13,
+      "days_required": 2,
+      "workers_needed": 2,
+      "previous_jobs": [7]
+    },
+    {
+      "id": 14,
+      "days_required": 1,
+      "workers_needed": 1,
+      "previous_jobs": [8]
+    },
+    {
+      "id": 15,
+      "days_required": 2,
+      "workers_needed": 3,
+      "previous_jobs": [9]
+    },
+    {
+      "id": 16,
+      "days_required": 1,
+      "workers_needed": 2,
+      "previous_jobs": [10]
+    }
+  ]
+}

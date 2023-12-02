@@ -31,7 +31,6 @@ func CalculateDuration(project Project) int {
 		resourceUsed := 0
 
 		if i > 0 && !project.Tasks[i-1].CompletedTask {
-			// Task depends on the previous task
 			continue
 		}
 
@@ -41,7 +40,6 @@ func CalculateDuration(project Project) int {
 
 		for day := 0; day < task.DaysRequired; day++ {
 			for resourceUsed < maxResource && task.CurrentWorkers > 0 {
-				// Assign work to workers
 				if resourceUsed+1 <= maxResource {
 					task.CurrentWorkers--
 					resourceUsed++
@@ -51,11 +49,11 @@ func CalculateDuration(project Project) int {
 			}
 		}
 
-		if taskDuration > task.DaysRequired { // Если продолжительность больше, чем указано в задаче, установите ее как минимальную продолжительность
+		if taskDuration > task.DaysRequired { 
 			task.DaysRequired = taskDuration
 		}
 
-		totalDuration += task.DaysRequired // Используйте минимальную продолжительность для подсчета общей продолжительности
+		totalDuration += task.DaysRequired 
 		project.Tasks[i].CompletedTask = true
 	}
 
@@ -65,7 +63,6 @@ func CalculateDuration(project Project) int {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	// Read task data from tasks.json
 	taskData, err := ioutil.ReadFile("tasks.json")
 	if err != nil {
 		fmt.Println("Error reading tasks.json:", err)
@@ -79,9 +76,8 @@ func main() {
 		return
 	}
 
-	// Set the number of workers randomly between 5 and 10 for each task
 	for i := range project.Tasks {
-		project.Tasks[i].CurrentWorkers = rand.Intn(6) + 5 // Random number between 5 and 10
+		project.Tasks[i].CurrentWorkers = rand.Intn(6) + 5 
 	}
 
 	projectJSON, err := json.MarshalIndent(project, "", "  ")
@@ -124,7 +120,6 @@ func main() {
 	}()
 
 	for sequence := range sequenceChan {
-		// Update the current workers for task 3 based on the sequence
 		project.Tasks[2].CurrentWorkers = len(sequence)
 		_ = CalculateDuration(project)
 	}
@@ -136,7 +131,6 @@ func main() {
 }
 
 func saveToFile(filename string, data []byte) error {
-	// Implement this function to save JSON data to a file
 	return nil
 }
 
